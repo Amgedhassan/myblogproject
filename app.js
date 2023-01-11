@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require('lodash');
 require('dotenv').config();
+const port = process.env.PORT || 3001;
 
 const dbPassword = process.env.DATABASEPW;
 
@@ -92,6 +93,6 @@ app.get("/posts/:postTitle", async(req, res) => {
 
 
 
-app.listen(3000, function () {
-    console.log("Server started on port 3000");
+app.listen(port, function () {
+    console.log("Server started on port " + port);
 });
